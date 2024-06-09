@@ -14,11 +14,10 @@ export class StaticSiteStack extends Stack {
 
     const cloudfrontOAI = new OriginAccessIdentity(this, "MyStaticSiteOAI");
 
-    const bucket = Bucket.fromBucketArn(
-      this,
-      "ExistingBucket",
-      "arn:aws:s3:::rs-school-shop-bucket"
-    );
+    const bucket = new Bucket(this, "MyStaticSiteBucket", {
+      websiteIndexDocument: "index.html",
+      websiteErrorDocument: "index.html",
+    });
 
     const bucketPolicy = new PolicyStatement({
       actions: ["s3:GetObject"],
