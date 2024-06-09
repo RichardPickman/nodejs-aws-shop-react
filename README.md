@@ -1,38 +1,16 @@
-# React-shop-cloudfront
+Since there is 2 tasks to get points:
 
-This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
+- 30 - S3 bucket has been created and configured properly. The app has been uploaded to the bucket and is available though the Internet. Nothing else has been done.
+- 40 - In addition to the previous work a CloudFront distribution is created and configured properly and the site is served now with CloudFront and is available through the Internet over CloudFront URL, not S3-website link (due to changes in bucket’s policy...).
 
-- [Vite](https://vitejs.dev/) as a project bundler
-- [React](https://beta.reactjs.org/) as a frontend framework
-- [React-router-dom](https://reactrouterdotcom.fly.dev/) as a routing library
-- [MUI](https://mui.com/) as a UI framework
-- [React-query](https://react-query-v3.tanstack.com/) as a data fetching library
-- [Formik](https://formik.org/) as a form library
-- [Yup](https://github.com/jquense/yup) as a validation schema
-- [Vitest](https://vitest.dev/) as a test runner
-- [MSW](https://mswjs.io/) as an API mocking library
-- [Eslint](https://eslint.org/) as a code linting tool
-- [Prettier](https://prettier.io/) as a code formatting tool
-- [TypeScript](https://www.typescriptlang.org/) as a type checking tool
+---
 
-## Available Scripts
+<br>
 
-### `start`
+**I decided to not to destroy S3 bucket, since I have to get points for it. Also I have to ensure, that the app is available through the Internet.**
 
-Starts the project in dev mode with mocked API on local environment.
+---
 
-### `build`
+Deploy to S3 Bucket: http://rs-school-shop-bucket.s3-website.eu-north-1.amazonaws.com/
 
-Builds the project for production in `dist` folder.
-
-### `preview`
-
-Starts the project in production mode on local environment.
-
-### `test`, `test:ui`, `test:coverage`
-
-Runs tests in console, in browser or with coverage.
-
-### `lint`, `prettier`
-
-Runs linting and formatting for all files in `src` folder.
+Deploy to CloudFront: https://d3jquy3xxdhpdz.cloudfront.net/
