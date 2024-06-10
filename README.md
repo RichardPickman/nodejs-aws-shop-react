@@ -9,4 +9,4 @@
 
 - [Deploy to S3 Bucket](http://rs-school-shop-bucket.s3-website.eu-north-1.amazonaws.com/)
 - [Deploy to CloudFront](https://d3jquy3xxdhpdz.cloudfront.net/)
-- [Deploy to CloudFront using aws-cdk with already initialized S3 Bucket](https://d219anjo9nkjx5.cloudfront.net)
+- [Deploy to CloudFront using aws-cdk with newly created S3 Bucket to statically host the website](https://d219anjo9nkjx5.cloudfront.net)
