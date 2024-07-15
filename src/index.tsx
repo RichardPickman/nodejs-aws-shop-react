@@ -1,12 +1,28 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import App from "~/components/App/App";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
-import { BrowserRouter } from "react-router-dom";
+import axios from "axios";
+import React from "react";
+import { createRoot } from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
+import { BrowserRouter } from "react-router-dom";
+import App from "~/components/App/App";
 import { theme } from "~/theme";
+
+axios.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response.status === 401) {
+      alert("Requested endpoint responded with 401 Unauthorized");
+    }
+
+    if (error.response.status === 403) {
+      alert("Requested endpoint responded with 403 Unauthorized");
+    }
+
+    return Promise.reject(error);
+  }
+);
 
 const queryClient = new QueryClient({
   defaultOptions: {
