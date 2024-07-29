@@ -1,9 +1,9 @@
-import Typography from "@mui/material/Typography";
-import { Product } from "~/models/Product";
-import CartIcon from "@mui/icons-material/ShoppingCart";
 import Add from "@mui/icons-material/Add";
 import Remove from "@mui/icons-material/Remove";
+import CartIcon from "@mui/icons-material/ShoppingCart";
 import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import { Product } from "~/models/Product";
 import { useCart, useInvalidateCart, useUpsertCart } from "~/queries/cart";
 
 type AddProductToCartProps = {
@@ -18,6 +18,7 @@ export default function AddProductToCart({ product }: AddProductToCartProps) {
 
   const addProduct = () => {
     upsertCart(
+      // @ts-ignore - TODO: fix types
       { product, count: cartItem ? cartItem.count + 1 : 1 },
       { onSuccess: invalidateCart }
     );

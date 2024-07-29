@@ -1,27 +1,27 @@
-import React from "react";
-import { Order, OrderItem } from "~/models/Order";
-import axios from "axios";
-import { useParams } from "react-router-dom";
-import PaperLayout from "~/components/PaperLayout/PaperLayout";
-import Typography from "@mui/material/Typography";
-import API_PATHS from "~/constants/apiPaths";
-import { CartItem } from "~/models/CartItem";
-import { AvailableProduct } from "~/models/Product";
-import ReviewOrder from "~/components/pages/PageCart/components/ReviewOrder";
-import { OrderStatus, ORDER_STATUS_FLOW } from "~/constants/order";
+import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import { Field, Form, Formik, FormikProps } from "formik";
 import Grid from "@mui/material/Grid";
-import TextField from "~/components/Form/TextField";
+import MenuItem from "@mui/material/MenuItem";
 import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import TableCell from "@mui/material/TableCell";
-import TableBody from "@mui/material/TableBody";
-import TableContainer from "@mui/material/TableContainer";
-import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import axios from "axios";
+import { Field, Form, Formik, FormikProps } from "formik";
+import React from "react";
 import { useQueries } from "react-query";
+import { useParams } from "react-router-dom";
+import TextField from "~/components/Form/TextField";
+import PaperLayout from "~/components/PaperLayout/PaperLayout";
+import ReviewOrder from "~/components/pages/PageCart/components/ReviewOrder";
+import API_PATHS from "~/constants/apiPaths";
+import { ORDER_STATUS_FLOW, OrderStatus } from "~/constants/order";
+import { CartItem } from "~/models/CartItem";
+import { Order, OrderItem } from "~/models/Order";
+import { AvailableProduct } from "~/models/Product";
 import { useInvalidateOrder, useUpdateOrderStatus } from "~/queries/orders";
 
 type FormValues = {
@@ -55,13 +55,16 @@ export default function PageOrder() {
   ] = results;
   const { mutateAsync: updateOrderStatus } = useUpdateOrderStatus();
   const invalidateOrder = useInvalidateOrder();
+  // @ts-ignore - TODO: fix types
   const cartItems: CartItem[] = React.useMemo(() => {
     if (order && products) {
       return order.items.map((item: OrderItem) => {
         const product = products.find((p) => p.id === item.productId);
+
         if (!product) {
           throw new Error("Product not found");
         }
+
         return { product, count: item.count };
       });
     }

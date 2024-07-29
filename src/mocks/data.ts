@@ -54,6 +54,8 @@ export const cart: CartItem[] = [
       price: 24,
       title: "ProductOne",
     },
+    product_id: "7567ec4b-b10c-45c5-9345-fc73c48a80a1",
+    id: "7567ec4b-b10c-45c5-9345-fc73c48a80a1",
     count: 2,
   },
   {
@@ -63,6 +65,8 @@ export const cart: CartItem[] = [
       price: 15,
       title: "ProductName",
     },
+    product_id: "7567ec4b-b10c-45c5-9345-fc73c48a80a1",
+    id: "7567ec4b-b10c-45c5-9345-fc73c48a80a1",
     count: 5,
   },
 ];
