@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import Stepper from "@mui/material/Stepper";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
-import Button from "@mui/material/Button";
+import Stepper from "@mui/material/Stepper";
 import Typography from "@mui/material/Typography";
+import React, { useState } from "react";
+import PaperLayout from "~/components/PaperLayout/PaperLayout";
+import AddressForm from "~/components/pages/PageCart/components/AddressForm";
 import ReviewCart from "~/components/pages/PageCart/components/ReviewCart";
 import ReviewOrder from "~/components/pages/PageCart/components/ReviewOrder";
-import PaperLayout from "~/components/PaperLayout/PaperLayout";
 import { Address, AddressSchema, Order } from "~/models/Order";
-import Box from "@mui/material/Box";
 import { useCart, useInvalidateCart } from "~/queries/cart";
-import AddressForm from "~/components/pages/PageCart/components/AddressForm";
 import { useSubmitOrder } from "~/queries/orders";
 
 enum CartStep {
@@ -60,7 +60,7 @@ export default function PageCart() {
     }
     const values = {
       items: data.map((i) => ({
-        productId: i.product.id,
+        productId: i.product_id,
         count: i.count,
       })),
       address,
