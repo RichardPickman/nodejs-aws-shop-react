@@ -46,11 +46,15 @@ export function useInvalidateCart() {
 }
 
 export function useUpsertCart() {
-  return useMutation((values: CartItem) =>
-    axios.put<CartItem[]>(`${API_PATHS.cart}/profile/cart`, values, {
-      headers: {
-        Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
-      },
-    })
+  return useMutation((values: Partial<CartItem>) =>
+    axios.put<CartItem[]>(
+      `${API_PATHS.cart}/profile/cart`,
+      { items: [values] },
+      {
+        headers: {
+          Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
+        },
+      }
+    )
   );
 }

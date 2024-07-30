@@ -2,11 +2,10 @@
 
 const API_PATHS = {
   product: "https://.execute-api.eu-west-1.amazonaws.com/dev",
-  order:
-    "https://ncjsivfss1.execute-api.eu-west-2.amazonaws.com/prod/api/profile/cart/checkout",
+  order: "http://localhost:5000/api/profile/cart/checkout",
   import: "https://vmeuwnvnaa.execute-api.eu-west-2.amazonaws.com/prod",
   bff: "https://gzog2ythal.execute-api.eu-west-2.amazonaws.com/prod",
-  cart: "https://ncjsivfss1.execute-api.eu-west-2.amazonaws.com/prod/api",
+  cart: "http://localhost:5000/api",
 };
 
 export default API_PATHS;
