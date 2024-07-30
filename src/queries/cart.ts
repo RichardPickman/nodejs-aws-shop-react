@@ -5,17 +5,15 @@ import API_PATHS from "~/constants/apiPaths";
 import { CartItem } from "~/models/CartItem";
 
 type CartResponse = {
-  data: {
-    cart: {
-      id: string;
-      items: CartItem[];
-      created_at: string;
-      updated_at: string;
-      user_id: string;
-      status: string;
-    };
-    count: number;
+  cart: {
+    id: string;
+    items: CartItem[];
+    created_at: string;
+    updated_at: string;
+    user_id: string;
+    status: string;
   };
+  count: number;
 };
 
 const queryCart = async () => {
@@ -25,9 +23,7 @@ const queryCart = async () => {
   };
   const res = await axios.get<CartResponse>(url, { headers });
 
-  console.log(res);
-
-  return res.data.data.cart.items;
+  return res.data.cart.items;
 };
 
 export function useCart() {
