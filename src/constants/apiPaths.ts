@@ -5,8 +5,8 @@ const API_PATHS = {
   order:
     "https://ncjsivfss1.execute-api.eu-west-2.amazonaws.com/prod/api/profile/cart/checkout",
   import: "https://vmeuwnvnaa.execute-api.eu-west-2.amazonaws.com/prod",
-  bff: "https://gzog2ythal.execute-api.eu-west-2.amazonaws.com/prod",
-  cart: "http://rp-aws-cart-api-dev.eu-west-2.elasticbeanstalk.com/api",
+  bff: "http://eb-sucks-never-use-it.eba-u62vd4mb.eu-west-3.elasticbeanstalk.com",
+  cart: "http://eb-cart-sucks.eba-qmn4kekx.eu-west-3.elasticbeanstalk.com/api",
 };
 
 export default API_PATHS;
